@@ -14,4 +14,19 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.get('/:productId', (req, res, next) => {
+    const id = req.params.productId;
+    if (id === 'special') {
+        res.status(200).json({
+            message: 'You discovered the special ID',
+            id: id
+        });
+
+    } else {
+        res.status(200).json({
+            message: 'You passed ID'
+        });
+    }
+});
+
 module.exports = router;
